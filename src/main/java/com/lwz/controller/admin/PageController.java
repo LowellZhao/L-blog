@@ -102,12 +102,14 @@ public class PageController extends BaseController {
         contents.setSlug(slug);
         // 设置类型为page
         contents.setType(Types.PAGE.getType());
-        if (null != allowComment) {
-            contents.setAllowComment(allowComment == 1);
-        }
-        if (null != allowPing) {
-            contents.setAllowPing(allowPing == 1);
-        }
+//        if (null != allowComment) {
+//            contents.setAllowComment(allowComment == 1);
+//        }
+//        if (null != allowPing) {
+//            contents.setAllowPing(allowPing == 1);
+//        }
+        contents.setAllowComment(true);
+        contents.setAllowPing(true);
         contents.setAuthorId(users.getUid());
         // 保存页面
         String result = contentsService.publish(contents);
