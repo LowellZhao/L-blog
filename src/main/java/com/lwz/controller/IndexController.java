@@ -300,6 +300,7 @@ public class IndexController extends BaseController {
      */
     @GetMapping(value = "/{pagename}")
     public String page(@PathVariable String pagename, HttpServletRequest request) {
+        System.out.println(pagename);
         ContentVo contents = contentService.getContents(pagename);
         if (null == contents) {
             return this.render_404();

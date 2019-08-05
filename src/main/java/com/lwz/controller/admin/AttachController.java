@@ -38,7 +38,7 @@ public class AttachController extends BaseController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AttachController.class);
 
-    public static final String CLASSPATH = TaleUtils.getUploadFilePath2();
+    public static final String CLASSPATH = TaleUtils.getUploadFilePath3();
 
     @Resource
     private IAttachService attachService;
@@ -90,6 +90,7 @@ public class AttachController extends BaseController {
                     String fkey = TaleUtils.getFileKey(fname);
                     String ftype = TaleUtils.isImage(multipartFile.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType();
                     File file = new File(CLASSPATH + fkey);
+                    System.out.println(CLASSPATH + fkey);
                     try {
                         // 复制文件
                         FileCopyUtils.copy(multipartFile.getInputStream(), new FileOutputStream(file));

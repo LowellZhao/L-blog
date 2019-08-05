@@ -83,7 +83,7 @@ public class TaleUtils {
     private static Properties getPropFromFile(String fileName) {
         Properties properties = new Properties();
         try {
-//            默认是classPath路径
+            // 默认是classPath路径
             InputStream resourceAsStream = new FileInputStream(fileName);
             properties.load(resourceAsStream);
         } catch (TipException | IOException e) {
@@ -458,11 +458,33 @@ public class TaleUtils {
         }
         int lastIndex = path.lastIndexOf("/");
         path = path.substring(0, lastIndex);
+        System.out.println(path);
         lastIndex = path.lastIndexOf("/");
         path = path.substring(0, lastIndex);
+        System.out.println(path);
         lastIndex = path.lastIndexOf("/");
         path = path.substring(0, lastIndex);
+        System.out.println(path);
         lastIndex = path.lastIndexOf("/");
+        path = path.substring(0, lastIndex);
+        System.out.println(path);
+        lastIndex = path.lastIndexOf("/");
+        path = path.substring(0, lastIndex);
+        System.out.println(path);
+        System.out.println(path + "/static/");
+        File file = new File(path);
+        return file.getAbsolutePath() + "/static/";
+    }
+
+    /**
+     * 获取保存文件的位置,放在static中
+     *
+     * @return 项目同一根目录
+     */
+    public static String getUploadFilePath3() {
+        String path = TaleUtils.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        path = path.substring(1, path.length());
+        int lastIndex = path.lastIndexOf("classes");
         path = path.substring(0, lastIndex);
         File file = new File(path);
         return file.getAbsolutePath() + "/";

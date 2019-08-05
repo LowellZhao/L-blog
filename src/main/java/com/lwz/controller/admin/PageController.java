@@ -167,7 +167,9 @@ public class PageController extends BaseController {
     @RequestMapping(value = "delete")
     @ResponseBody
     public RestResponseBo delete(@RequestParam int cid, HttpServletRequest request) {
+        // 删除文章
         String result = contentsService.deleteByCid(cid);
+        // 增加日志
         logService.insertLog(LogActions.DEL_ARTICLE.getAction(), cid + "", request.getRemoteAddr(), this.getUid(request));
         if (!WebConst.SUCCESS_RESULT.equals(result)) {
             return RestResponseBo.fail(result);

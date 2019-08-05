@@ -9,7 +9,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-
     <import resource="spring-dao.xml"/>
     <import resource="spring-service.xml"/>
+
 </beans>
