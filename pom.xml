@@ -15,7 +15,7 @@
         <!--spring版本控制-->
         <spring.version>4.3.18.RELEASE</spring.version>
         <!-- 数据库相关版本 -->
-        <mysql.conn.version>5.1.39</mysql.conn.version>
+        <mysql.conn.version>8.0.16</mysql.conn.version>
         <mybatis.version>3.4.2</mybatis.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
     </properties>
