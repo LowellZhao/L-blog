@@ -13,7 +13,7 @@
 
     <properties>
         <!--spring版本控制-->
-        <spring.version>4.3.18.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <!-- 数据库相关版本 -->
         <mysql.conn.version>5.1.39</mysql.conn.version>
         <mybatis.version>3.4.2</mybatis.version>
